@@ -1,0 +1,18 @@
+{
+        "enable-rainbow-brackets": true,
+        "show-mode": false,
+        "colourscheme": "nord",
+        "darkmode": true,
+        "lightline-colourscheme": "nord",
+        "line-wrapping": false,
+        "mouse-support": true,
+        "nerdtree": {
+                "auto-open-on-tabs": true,
+                "exit-on-last": true,
+                "refuse-buffer-replace": true
+        },
+        "relative-ruler": true,
+        "ruler": true,
+        "truecolour-terminal": true,
+	"hide-tildas": false
+}
