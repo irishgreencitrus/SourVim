@@ -1,9 +1,9 @@
 {
         "enable-rainbow-brackets": true,
         "show-mode": false,
-        "colourscheme": "nord",
+        "colourscheme": "onedark",
         "darkmode": true,
-        "lightline-colourscheme": "nord",
+        "lightline-colourscheme": "onedark",
         "line-wrapping": false,
         "mouse-support": true,
         "nerdtree": {
