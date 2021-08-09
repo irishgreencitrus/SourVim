@@ -125,7 +125,7 @@ endif
 set completeopt=menuone,noselect
 lua << EOF
 require'lspconfig'.pyright.setup{}
-require'lspconfig'.clangd.setup{}
+require'lspconfig'.ccls.setup{}
 require'lspconfig'.gdscript.setup{}
 require'lspconfig'.gopls.setup{}
 
