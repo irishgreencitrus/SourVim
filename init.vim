@@ -16,25 +16,26 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.local/share/nvim/plugs')
-Plug 'hrsh7th/nvim-compe'
 Plug 'airblade/vim-gitgutter'
+Plug 'akinsho/nvim-bufferline.lua'
 Plug 'glepnir/dashboard-nvim'
+Plug 'hrsh7th/nvim-compe'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', {'do':{-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'luochen1990/rainbow'
 Plug 'mattn/emmet-vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'neovim/nvim-lspconfig'
+Plug 'ollykel/v-vim'
 Plug 'preservim/nerdtree'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sbdchd/neoformat'
-Plug 'itchyny/lightline.vim'
-Plug 'akinsho/nvim-bufferline.lua'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'xolox/vim-misc'
