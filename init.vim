@@ -32,7 +32,9 @@ Plug 'luochen1990/rainbow'
 Plug 'mattn/emmet-vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'ollykel/v-vim'
 Plug 'preservim/nerdtree'
 Plug 'rafi/awesome-vim-colorschemes'
@@ -133,6 +135,7 @@ require'lspconfig'.pyright.setup{}
 require'lspconfig'.ccls.setup{}
 require'lspconfig'.gdscript.setup{}
 require'lspconfig'.gopls.setup{}
+require'telescope'.load_extension('project')
 
 require'bufferline'.setup{
 options = {
