@@ -32,12 +32,14 @@ Plug 'luochen1990/rainbow'
 Plug 'mattn/emmet-vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'ollykel/v-vim'
 Plug 'preservim/nerdtree'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
+Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 call plug#end()
@@ -102,6 +104,8 @@ if sourvim_settings["truecolour-terminal"]
 	set termguicolors
 endif
 set nocompatible
+set hidden
+set encoding=utf-8
 set showtabline=1
 if sourvim_settings["darkmode"]
 	set bg=dark
