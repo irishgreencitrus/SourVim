@@ -21,6 +21,7 @@ Plug 'akinsho/nvim-bufferline.lua'
 Plug 'glepnir/dashboard-nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'irishgreencitrus/PMLO-vim-syntax'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', {'do':{-> fzf#install()}}
@@ -31,14 +32,15 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'luochen1990/rainbow'
 Plug 'mattn/emmet-vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'ms-jpq/chadtree'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'ollykel/v-vim'
-Plug 'preservim/nerdtree'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'sbdchd/neoformat'
+Plug 'stefanos82/nelua.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'vim-ctrlspace/vim-ctrlspace'
@@ -135,6 +137,7 @@ require'lspconfig'.pyright.setup{}
 require'lspconfig'.ccls.setup{}
 require'lspconfig'.gdscript.setup{}
 require'lspconfig'.gopls.setup{}
+require'lspconfig'.clojure_lsp.setup{}
 require'telescope'.load_extension('project')
 
 require'bufferline'.setup{
