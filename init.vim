@@ -32,7 +32,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'luochen1990/rainbow'
 Plug 'mattn/emmet-vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'ms-jpq/chadtree'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
