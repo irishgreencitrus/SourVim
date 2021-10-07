@@ -70,66 +70,40 @@ let g:dashboard_custom_section = {
 			\'e': {'description':[' Create New'],'command':'DashboardNewFile'},
 			\}
 let g:dashboard_default_executive = 'fzf'
-let g:lightline = {'colorscheme': sourvim_settings["lightline-colourscheme"], 'separator': {'left':'','right':''},'subseparator': { 'left': '', 'right': '' }, 'enable':{'tabline':0}}
+let g:lightline = {'colorscheme': 'onedark', 'separator': {'left':'','right':''},'subseparator': { 'left': '', 'right': '' }, 'enable':{'tabline':0}}
 let g:onedark_hide_endofbuffer = 1
 let g:onedark_termcolors = 256
 let g:onedark_terminal_italics = 1
-if sourvim_settings["enable-rainbow-brackets"]
-	let g:rainbow_active = 1
-else
-	let g:rainbow_active = 0
-endif
+let g:rainbow_active = 1
+
 let g:session_autosave = 'no'
 
 nnoremap <silent><Tab>   :BufferLineCycleNext<CR>
 nnoremap <silent><S-Tab> :BufferLineCyclePrev<CR>
 
 " Colourscheme
-exec "colorscheme ".sourvim_settings["colourscheme"]
+exec "colorscheme onedark"
 set tabstop=4
 
-" Settings
-if sourvim_settings["mouse-support"]
-	set mouse=a
-endif
-if ! sourvim_settings["show-mode"]
-	set noshowmode
-endif
-if ! sourvim_settings["line-wrapping"]
-	set nowrap
-endif
-if sourvim_settings["ruler"]
-	set number
-endif
-if sourvim_settings["relative-ruler"]
-	set relativenumber
-endif
-if sourvim_settings["truecolour-terminal"]
-	set termguicolors
-endif
+" Settings CHANGEME
+set mouse=a
+set noshowmode
+set nowrap
+set number
+set relativenumber
+
+set termguicolors
+
+
 set nocompatible
 set hidden
 set encoding=utf-8
 set showtabline=1
-if sourvim_settings["darkmode"]
-	set bg=dark
-endif
+" Comment this out to change mode
+set bg=dark
 
-if sourvim_settings["nerdtree"]["exit-on-last"]
-	" Exit Vim if NERDTree is the only window left.
-	autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-endif
-if sourvim_settings["nerdtree"]["refuse-buffer-replace"]
-	" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-	autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-endif
-if sourvim_settings["nerdtree"]["auto-open-on-tabs"]
-	" Open the existing NERDTree on each new tab.
-	autocmd BufWinEnter * silent NERDTreeMirror
-endif
-if sourvim_settings["hide-tildas"]
-	hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
-endif
+" Comment this out to hide tildas		
+hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
 set completeopt=menuone,noselect
 lua << EOF
