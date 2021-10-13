@@ -13,7 +13,7 @@ command SOURupdate call SourUpdate()
 command SOURconfigure call SourConfig()
 
 " Setup ginit.vim for Nvim-QT
-if ! filereadable(gui_config_file)
+if ! filereadable(g:SOURgui_config_file)
 	call writefile(["GuiFont! JetBrainMono NF"], gui_config_file, "a")
 endif
 
