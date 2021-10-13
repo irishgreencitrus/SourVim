@@ -1,13 +1,22 @@
-let settings_file = expand(stdpath("config") . "/settings.json")
-" let sourvim_settings = {}
-if filereadable(settings_file)
-	let sourvim_settings = json_decode(readfile(settings_file))
-endif
+let g:SOURdir = expand(stdpath("config"))
+let g:SOURconfig_file = expand(stdpath("config") . "/init.vim")
+let g:SOURgui_config_file = expand(stdpath("config") . "/ginit.vim")
+
+function! SourUpdate()
+		execute '!git -C '.g:SOURdir.' pull'
+endfunction
+function! SourConfig()
+		execute 'e '.g:SOURconfig_file
+endfunction
+
+command SOURupdate call SourUpdate()
+command SOURconfigure call SourConfig()
 
 " Setup ginit.vim for Nvim-QT
-if ! filereadable(expand(stdpath("config") . "/ginit.vim"))
-	call writefile(["GuiFont! FiraCode NF"], stdpath("config") . "/ginit.vim", "a")
+if ! filereadable(gui_config_file)
+	call writefile(["GuiFont! JetBrainMono NF"], gui_config_file, "a")
 endif
+
 " Download VimPlug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -15,7 +24,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.local/share/nvim/plugs')
+call plug#begin(g:SOURdir.'/plugs')
 Plug 'airblade/vim-gitgutter'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'glepnir/dashboard-nvim'
@@ -83,35 +92,29 @@ nnoremap <silent><S-Tab> :BufferLineCyclePrev<CR>
 
 " Colourscheme
 exec "colorscheme onedark"
-set tabstop=4
-
-" Settings CHANGEME
+set bg=dark
+set completeopt=menuone,noselect
+set encoding=utf-8
+set hidden
 set mouse=a
+set nocompatible
 set noshowmode
 set nowrap
 set number
 set relativenumber
-
-set termguicolors
-
-
-set nocompatible
-set hidden
-set encoding=utf-8
 set showtabline=1
-" Comment this out to change mode
-set bg=dark
+set tabstop=4
+set termguicolors
 
 " Comment this out to hide tildas		
 hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
-set completeopt=menuone,noselect
 lua << EOF
-require'lspconfig'.pyright.setup{}
 require'lspconfig'.ccls.setup{}
+require'lspconfig'.clojure_lsp.setup{}
 require'lspconfig'.gdscript.setup{}
 require'lspconfig'.gopls.setup{}
-require'lspconfig'.clojure_lsp.setup{}
+require'lspconfig'.pyright.setup{}
 require'telescope'.load_extension('project')
 
 require'bufferline'.setup{
