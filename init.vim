@@ -25,6 +25,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin(g:SOURdir.'/plugs')
+Plug 'udalov/kotlin-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'glepnir/dashboard-nvim'
@@ -39,7 +40,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'luochen1990/rainbow'
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'on': ['EmmetInstall','Emmet'] }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'neovim/nvim-lspconfig'
@@ -104,6 +105,7 @@ set number
 set relativenumber
 set showtabline=1
 set tabstop=4
+set shiftwidth=4
 set termguicolors
 
 " Comment this out to hide tildas		
