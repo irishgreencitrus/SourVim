@@ -107,6 +107,7 @@ let g:rainbow_active = 1
 let g:nvim_tree_show_icons = {'git':0}
 let g:nvim_tree_gitignore = 0
 let g:nvim_tree_git_hl = 0
+let g:chadtree_settings = {"view.width":30}
 
 let g:session_autosave = 'no'
 
