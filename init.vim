@@ -52,7 +52,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'luochen1990/rainbow'
 Plug 'mattn/emmet-vim', { 'on': ['EmmetInstall','Emmet'] }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'ms-jpq/chadtree', {'branch': 'chad'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
@@ -114,7 +114,7 @@ nnoremap <silent><Tab>   :BufferLineCycleNext<CR>
 nnoremap <silent><S-Tab> :BufferLineCyclePrev<CR>
 autocmd TermEnter term://*toggleterm#*
       \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
-nnoremap <silent>tt :NvimTreeToggle<CR>
+nnoremap <silent>tt :CHADopen<CR>
 
 " Colourscheme
 exec "colorscheme onedark"
@@ -140,7 +140,6 @@ lua << EOF
 require'lspconfig'.gdscript.setup{}
 require'telescope'.load_extension('project')
 require'which-key'.setup{}
-require'nvim-tree'.setup{}
 require'toggleterm'.setup{
 	open_mapping = [[tj]],
 	direction = 'float',
