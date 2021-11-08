@@ -104,6 +104,9 @@ let g:onedark_hide_endofbuffer = 1
 let g:onedark_termcolors = 256
 let g:onedark_terminal_italics = 1
 let g:rainbow_active = 1
+let g:nvim_tree_show_icons = {'git':0}
+let g:nvim_tree_gitignore = 0
+let g:nvim_tree_git_hl = 0
 
 let g:session_autosave = 'no'
 
