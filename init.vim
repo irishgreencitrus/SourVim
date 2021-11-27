@@ -17,7 +17,7 @@ command SOURconfigure call SourConfig()
 
 " Setup ginit.vim for Nvim-QT
 if !filereadable(g:SOURgui_config_file)
-	call writefile(["GuiFont! JetBrainMono NF"], gui_config_file, "a")
+	call writefile(["GuiFont! JetBrainMono NF"], g:SOURgui_config_file, "a")
 endif
 
 " Download VimPlug
