@@ -4,8 +4,3 @@ require("conf.settings")
 require("conf.keybinds")
 require("conf.plugins")
 require("conf.plugins.lsp")
-
-
-
-
-

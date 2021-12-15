@@ -1,6 +1,9 @@
 local set = vim.opt
 
-require("lualine").setup{}
+require('gitsigns').setup{}
+require("lualine").setup{
+	extensions = {"chadtree","toggleterm"}
+}
 require("which-key").setup{}
 require("telescope").load_extension('project')
 

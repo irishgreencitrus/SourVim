@@ -25,4 +25,3 @@ set.wrap = false
 set.expandtab = false
 setg.rainbow_active = 1
 setg.chadtree_settings = {view = { width = 30 }}
-
