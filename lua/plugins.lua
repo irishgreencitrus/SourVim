@@ -27,7 +27,7 @@ return {
     },
     config = function()
         require("navigator").setup {
-            mason = true,
+            --mason = true,
             lsp = {
                 format_on_save = false,
                 diagnostic = { virtual_text = false }
@@ -86,7 +86,7 @@ return {
             }
         end
     end
-}, { "neovim/nvim-lspconfig" }, {
+}, { "neovim/nvim-lspconfig" }, --[[{
     "williamboman/mason.nvim",
     config = function()
         require("mason").setup {
@@ -105,10 +105,12 @@ return {
         require("mason-lspconfig").setup { automatic_installation = false }
     end,
     dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" }
-}, {
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    config = function() require("lsp_lines").setup() end
-}, {
+},
+    ]] --
+    {
+        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        config = function() require("lsp_lines").setup() end
+    }, {
     "jose-elias-alvarez/null-ls.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
